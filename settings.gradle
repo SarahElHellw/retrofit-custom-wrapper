@@ -1,0 +1,2 @@
+rootProject.name = "retrofit-custom-wrapper"
+include ':app'
