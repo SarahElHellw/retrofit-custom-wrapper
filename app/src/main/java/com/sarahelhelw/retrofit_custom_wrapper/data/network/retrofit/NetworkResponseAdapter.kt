@@ -1,4 +1,4 @@
-package com.sarahelhelw.retrofit_custom_wrapper.data.retrofit
+package com.sarahelhelw.retrofit_custom_wrapper.data.network.retrofit
 
 import okhttp3.ResponseBody
 import retrofit2.Call

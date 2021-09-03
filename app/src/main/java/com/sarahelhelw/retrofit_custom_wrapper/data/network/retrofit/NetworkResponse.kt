@@ -1,4 +1,4 @@
-package com.sarahelhelw.retrofit_custom_wrapper.data.retrofit
+package com.sarahelhelw.retrofit_custom_wrapper.data.network.retrofit
 
 import java.io.IOException
 
@@ -6,14 +6,14 @@ sealed class NetworkResponse<out T : Any, out U : Any> {
     /**
      * Success response with body
      */
-    data class Success<T : Any>(val body: T) : NetworkResponse<T, Nothing>()
+    data class Success<T : Any>(val data: T) : NetworkResponse<T, Nothing>()
 
     /**
      * For mapping non 2XX responses
-     * @param body error body
+     * @param errorBody error body
      * @param code response status code
      */
-    data class ApiError<U : Any>(val body: U, val code: Int) : NetworkResponse<Nothing, U>()
+    data class ApiError<U : Any>(val errorBody: U, val code: Int) : NetworkResponse<Nothing, U>()
 
     /**
      * Network error/No internet connection

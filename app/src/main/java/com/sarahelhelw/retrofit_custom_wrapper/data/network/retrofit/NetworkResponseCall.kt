@@ -1,4 +1,4 @@
-package com.sarahelhelw.retrofit_custom_wrapper.data.retrofit
+package com.sarahelhelw.retrofit_custom_wrapper.data.network.retrofit
 
 import okhttp3.Request
 import okhttp3.ResponseBody
@@ -19,7 +19,7 @@ internal class NetworkResponseCall<S : Any, E : Any>(
 
 
     /**
-     * enqueue function responsible for sending asynchronously
+     * enqueue function responsible for sending network requests asynchronously
      * and receives a callback for the response in case of success or failure
      */
     override fun enqueue(callback: Callback<NetworkResponse<S, E>>) {
@@ -33,7 +33,7 @@ internal class NetworkResponseCall<S : Any, E : Any>(
 
                 val result: NetworkResponse<S, E> =
                     if (response.isSuccessful) {
-                        //for status 200..300
+                        //for status codes 200..300
                         if (body != null) {
                             NetworkResponse.Success(body)
                         } else {

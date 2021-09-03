@@ -1,4 +1,4 @@
-package com.sarahelhelw.retrofit_custom_wrapper.data.retrofit
+package com.sarahelhelw.retrofit_custom_wrapper.data.network.retrofit
 
 import retrofit2.Call
 import retrofit2.CallAdapter
@@ -37,6 +37,8 @@ class NetworkResponseAdapterFactory : CallAdapter.Factory() {
         val successBodyType = getParameterUpperBound(0, responseType)
         val errorBodyType = getParameterUpperBound(1, responseType)
 
+
+        //Returns a Converter for ResponseBody to type from the available factories
         val errorBodyConverter =
             retrofit.nextResponseBodyConverter<Any>(null, errorBodyType, annotations)
 
